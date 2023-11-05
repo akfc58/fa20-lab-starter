@@ -8,11 +8,11 @@ int ll_has_cycle(node *head) {
         return 0;
     }
     while (hare->next != NULL && hare->next->next != NULL) {
+        tortoise = tortoise->next;
+        hare = hare->next->next;
         if (tortoise == hare) {
             return 1;
         }
-        tortoise = tortoise->next;
-        hare = hare->next->next;
     }
     return 0;
 }
